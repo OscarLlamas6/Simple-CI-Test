@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 jobs:
   ci_to_main:
@@ -17,7 +16,5 @@ jobs:
           node-version: 10
       - run: cd ci-test
       - run: npm install
-      - run: npm cache clean
-      - run: npm cache verify
       - run: npm run test
       - run: npm run build

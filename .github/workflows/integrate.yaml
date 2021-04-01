@@ -14,8 +14,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 10
       - run: cd ci-test
       - run: npm install
-      - run: npm test
+      - run: npm cache clean
+      - run: npm cache verify
+      - run: npm run test
       - run: npm run build
